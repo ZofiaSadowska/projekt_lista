@@ -32,9 +32,9 @@ namespace projekt
             nowaLista.ShowDialog();
             
             
-            ///var rnd = new Random();
+            var rnd = new Random();
 
-            ///lista.Items.Add(new { m_nID = rnd.Next(), m_strName = "Zosia" });
+            lista.Items.Add(new { m_nID = rnd.Next(), m_strName = nowaLista.strName, m_strSname = nowaLista.strSname });
 
         }
     }

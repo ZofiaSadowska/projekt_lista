@@ -16,9 +16,9 @@
         <Label Grid.Column="1" Content="Imię: " HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
         <Label Grid.Column="1" Content="Nazwisko: " HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
         <Label Grid.Column="1" Content="PESEL: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,108,0,0" Height="26" Width="47"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="51,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="Imię" Height="18"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="77,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="Imię_Kopiuj" Height="18"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="51,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="Imię_Kopiuj1" Height="18"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="51,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strName" Height="18"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="77,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strSname" Height="18"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="51,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strPesel" Height="18"/>
         <Button Grid.Column="1" Content="Zapisz i Dodaj" HorizontalAlignment="Left" Margin="244,211,0,0" VerticalAlignment="Top" Height="20" Width="89" x:Name="dodaj" Click="dodaj_Click"/>
         <Button Grid.Column="1" Content="Anuluj" HorizontalAlignment="Left" Margin="171,211,0,0" VerticalAlignment="Top" Height="20" Width="53" x:Name="anuluj" Click="anuluj_Click" />
 

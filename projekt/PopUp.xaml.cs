@@ -31,7 +31,7 @@ namespace projekt
 
         private void dodaj_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
