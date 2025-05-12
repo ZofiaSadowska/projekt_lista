@@ -11,6 +11,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Security.Policy;
+using System.Globalization;
 
 namespace projekt
 {
@@ -24,12 +26,23 @@ namespace projekt
         public string? m_strName { get; set; }
         public string? m_strSecName { get; set; }
         public string? m_strSurname { get; set; }
+        public string? m_strBdate { get; set; } 
+        public string? m_strPnumber { get; set; }
+        public string? m_strAdress { get; set; }
+        public string? m_strCity { get; set; }
+        public string? m_strPostCode { get; set; } 
         public Osoba()
         {
             m_strPESEL = "00000000000";
             m_strName = "";
             m_strSecName = "";
             m_strSurname = "";
+            m_strBdate = "";
+            m_strPnumber = "";
+            m_strAdress = "";
+            m_strCity = "";
+            m_strPostCode = "";
+
         }
     }
 
@@ -40,19 +53,7 @@ namespace projekt
             InitializeComponent();
         }
 
-        private void dodaj_Click(object sender, RoutedEventArgs e)
-        {
-
-            //PopUp nowaLista = new PopUp();
-
-            //nowaLista.ShowDialog();
-
-
-            //var rnd = new Random();
-
-            //lista.Items.Add(new { m_nID = rnd.Next(), m_strName = nowaLista.strName.Text, m_strSname = nowaLista.strSname.Text });
-
-        }
+       
 
         private void New_Click(object sender, RoutedEventArgs e)
         {
@@ -87,6 +88,11 @@ namespace projekt
                             uczen.m_strName = columns.ElementAtOrDefault(1);
                             uczen.m_strSecName = columns.ElementAtOrDefault(2);
                             uczen.m_strSurname = columns.ElementAtOrDefault(3);
+                            uczen.m_strBdate = columns.ElementAtOrDefault(4);
+                            uczen.m_strPnumber = columns.ElementAtOrDefault(5);
+                            uczen.m_strAdress = columns.ElementAtOrDefault(6);
+                            uczen.m_strCity = columns.ElementAtOrDefault(7);
+                            uczen.m_strPostCode = columns.ElementAtOrDefault(8);
                             lista.Items.Add(uczen);
                         }
                     }
@@ -124,14 +130,37 @@ namespace projekt
         private void NewRecord_Click(object sender, RoutedEventArgs e)
         {
             PopUp nowy = new PopUp();
-            nowy.ShowDialog();
-            Osoba uczen = new();
-            Random random = new();
-            uczen.m_strPESEL = random.Next().ToString();
-            uczen.m_strName = nowy.strName.Text;
-            uczen.m_strSurname = nowy.strSurname.Text;
-            uczen.m_strSecName = nowy.strSecName.Text;
-            lista.Items.Add(uczen); 
+            bool? result = nowy.ShowDialog();  
+
+            if (result == true)
+            {
+                Osoba uczen = new();
+                Random random = new();
+                TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+
+                string strName = ti.ToTitleCase(nowy.strName.Text.Trim().ToLower());
+                string strSurname = ti.ToTitleCase(nowy.strSurname.Text.Trim().ToLower());
+                string strSecName = ti.ToTitleCase(nowy.strSecName.Text.Trim().ToLower());
+                string strAdress = ti.ToTitleCase(nowy.strAdress.Text.Trim().ToLower());
+                string strCity = ti.ToTitleCase(nowy.strCity.Text.Trim().ToLower());
+
+                string strPnumber = nowy.strPnumber.Text.Replace(" ", "");
+                string czesci  = $"{strPnumber.Substring(0, 3)} {strPnumber.Substring(3, 3)} {strPnumber.Substring(6, 3)}";
+                strPnumber = "+48" + " " + czesci;
+
+
+                uczen.m_strPESEL = random.Next().ToString();
+                uczen.m_strName = strName;
+                uczen.m_strSurname = strSurname;
+                uczen.m_strSecName = strSecName;
+                uczen.m_strBdate = nowy.strBdate.Text.Trim();
+                uczen.m_strPnumber = strPnumber;
+                uczen.m_strAdress = strAdress;
+                uczen.m_strCity = strCity;
+                uczen.m_strPostCode = nowy.strPostCode.Text.Trim();
+
+                lista.Items.Add(uczen);
+            }
         }
         private void RemoveSel_Click(object sender, RoutedEventArgs e)
         {

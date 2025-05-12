@@ -5,22 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projekt"
         mc:Ignorable="d"
-        Title="PopUp" Height="268" Width="410">
+        Title="PopUp" Height="350" Width="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="34*"/>
-            <ColumnDefinition Width="367*"/>
+            <ColumnDefinition Width="344*"/>
+            <ColumnDefinition Width="23*"/>
             <ColumnDefinition Width="9*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="1" Content="Imię: " HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
-        <Label Grid.Column="1" Content="Nazwisko: " HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
-        <Label Grid.Column="1" Content="Drugie Imie: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,108,0,0" Height="26" Width="81"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="51,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strName" Height="18"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="77,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strSurname" Height="18"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="85,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strSecName" Height="18"/>
-        <Button Grid.Column="1" Content="Zapisz i Dodaj" HorizontalAlignment="Left" Margin="244,0,0,20" VerticalAlignment="Bottom" Height="20" Width="89" x:Name="dodaj" Click="dodaj_Click"/>
-        <Button Grid.Column="1" Content="Anuluj" HorizontalAlignment="Left" Margin="170,0,0,20" VerticalAlignment="Bottom" Height="20" Width="53" x:Name="anuluj" Click="anuluj_Click" />
-
+        <Label Content="Imię*: " HorizontalAlignment="Left" Margin="38,18,0,0" VerticalAlignment="Top" Height="26" Width="44" Grid.ColumnSpan="2"/>
+        <Label Content="Nazwisko*: " HorizontalAlignment="Left" Margin="38,49,0,0" VerticalAlignment="Top" Height="26" Width="69" Grid.ColumnSpan="2"/>
+        <Label Content="Drugie Imie: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,80,0,0" Height="26" Width="81" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="46,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strName" Height="18"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="74,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strSurname" Height="18"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="81,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strSecName" Height="18"/>
+        <Label Content="Data urodzenia*: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,108,0,0" Height="26" Width="100" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="102,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strBdate" Height="18"/>
+        <Label Content="Numer telefonu: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,140,0,0" Height="26" Width="103" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="106,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strPnumber" Height="18" />
+        <Label Content="Adres zamieszkania*: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,169,0,0" Height="26" Width="124" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="122,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strAdress" Height="18"/>
+        <Label Content="Miejscowość*: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,200,0,0" Height="26" Width="84" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="91,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strCity" Height="18"/>
+        <Label Content="Kod pocztowy*: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="37,230,0,0" Height="26" Width="97" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="94,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="strPostCode" Height="18"/>
+        <Button Grid.Column="1" Content="Zapisz i Dodaj" HorizontalAlignment="Right" Margin="0,0,0,20" VerticalAlignment="Bottom" Height="20" Width="89" x:Name="dodaj" Click="Dodaj_Click"/>
+        <Button Grid.Column="1" Content="Anuluj" HorizontalAlignment="Right" Margin="0,0,110,20" VerticalAlignment="Bottom" Height="20" Width="53" x:Name="anuluj" Click="Anuluj_Click" />
+        <Label Content="Pola obowiazkowe są zaznaczone symbolem * " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,279,0,0" Height="24" Width="217" Grid.ColumnSpan="2" FontSize="10" x:Name="uwaga"/>
+        <Label Content=" " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227,140,0,0" Height="26" Width="360" Grid.Column="1" x:Name="warning" FontSize="11"/>
     </Grid>
+
 </Window>
