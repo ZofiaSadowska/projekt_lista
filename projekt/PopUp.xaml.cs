@@ -80,12 +80,12 @@ namespace projekt
                 {
                     pole.ClearValue(TextBox.BorderBrushProperty);
                     pole.ClearValue(TextBox.BorderThicknessProperty);
-                    uwaga.ClearValue(TextBox.ForegroundProperty);  
+                    uwaga.ClearValue(Label.ForegroundProperty);  
                 }
             }
 
             string PhoneNumber = strPnumber.Text.Replace(" ", "");
-            if (PhoneNumber.Length != 9 || PhoneNumber.Length != 0)
+            if (PhoneNumber.Length != 9 && PhoneNumber.Length != 0)
             {
                 warning.Content = "Zły format, za mało lub za dużo cyfr (powinno byc 9)";
                 warning.Foreground = Brushes.Red;
@@ -93,7 +93,9 @@ namespace projekt
             }
             else
             {
-                warning.Content = "";
+                warning.ClearValue(Label.ForegroundProperty);
+                warning.ClearValue(Label.ContentProperty);
+
             }
 
 
